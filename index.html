@@ -12,6 +12,10 @@
 </head>
 <body>
   <canvas id="particle-canvas" aria-hidden="true"></canvas>
+  <div class="noise-overlay" aria-hidden="true"></div>
+  <div class="bg-blob blob-a" aria-hidden="true"></div>
+  <div class="bg-blob blob-b" aria-hidden="true"></div>
+  <div id="cursor-glow" class="cursor-glow" aria-hidden="true"></div>
 
   <header class="site-header">
     <div class="brand">KLMN</div>
@@ -57,7 +61,7 @@
       <div class="grid-2" style="margin-top: 1rem;">
         <article class="card">
           <h3>Core Skills</h3>
-          <p>Python · C++ · ROS1/2 · Git · Docker · SLAM · LLM · mLLM · VLM</p>
+          <p><span class="key">Python</span> · <span class="key">C++</span> · ROS1/2 · Git · Docker · SLAM · <span class="violet">LLM</span> · <span class="violet">mLLM</span> · <span class="violet">VLM</span></p>
         </article>
         <article class="card">
           <h3>Personal Traits</h3>
@@ -84,14 +88,14 @@
         <article class="timeline-item">
           <span class="time">Present</span>
           <h3>HKUST(GZ)</h3>
-          <p>Major: ROAS (Robotics and Autonomous Systems)</p>
+          <p><span class="key">Major:</span> <span class="strong-line">ROAS (Robotics and Autonomous Systems)</span></p>
           <p>Key Coursework: Honors Calculus I & II, Honors General Physics I, C++ Programming, Introduction to Computer Science.</p>
-          <p>Scholarship: RMB 200,000 university scholarship.</p>
+          <p><span class="key">Scholarship:</span> <span class="violet">RMB 200,000</span> university scholarship.</p>
         </article>
         <article class="timeline-item">
           <span class="time">High School</span>
           <h3>Shimen High School (Youwei Class), Foshan, Guangdong</h3>
-          <p><span class="key">Gaokao:</span> <span class="strong-line">660</span> (Math 127, Physics 93, Chemistry 98).</p>
+          <p><span class="key">Gaokao:</span> <span class="strong-line">660</span> (Math 127, English 137, Physics 93, Chemistry 98).</p>
           <p><span class="key">Guangdong Provincial Rank:</span> <span class="violet">1900 / 440,000</span> · <span class="strong-line">Top 0.5%</span>.</p>
         </article>
       </div>
@@ -125,8 +129,14 @@
           <p class="meta">Repo: github.com/PnX-HKUSTGZ/RMSynapse</p>
         </article>
         <article class="card project-card">
-          <h3>Campus Resource Reservation Platform</h3>
-          <p>Developed a modular, high-concurrency booking platform for academic rooms, sports facilities, and event ticketing.</p>
+          <h3>Campus One-Stop Platform</h3>
+          <p><span class="strong-line">One integrated campus platform</span> serving students, faculty, and staff to improve academic openness, communication efficiency, and daily-life convenience.</p>
+          <p class="meta">Tech: FastAPI, Python Async, WebSocket, Redis Pub/Sub, PostgreSQL, SQLAlchemy + asyncpg, Alembic, Jinja2, Vanilla JS (ES6 Modules), JWT/SSO-ready auth, Docker, K8s-ready deployment</p>
+          <p class="meta">Repo: github.com/klmn-opp/campus</p>
+        </article>
+        <article class="card project-card">
+          <h3>Campus Resource Reservation Platform (TICKET)</h3>
+          <p>Developed a modular, <span class="key">high-concurrency</span> booking platform for academic rooms, sports facilities, and event ticketing.</p>
           <p class="meta">Tech: FastAPI, Async Python, SQLAlchemy, PostgreSQL, Redis + Lua, Celery, WebSocket, Jinja2, ES6, Docker Compose</p>
           <p class="meta">Repo: github.com/zhzhang1212/TICKET</p>
         </article>
@@ -159,7 +169,7 @@
         <article class="timeline-item">
           <span class="time">2025.09 – 2025.10</span>
           <h3>RoboMaster Campus Competition</h3>
-          <p><span class="key">1st Prize</span> · <span class="key">3rd Place</span></p>
+          <p><span class="key">1st Prize</span> · <span class="violet">3rd Place</span></p>
           <p>Led engineering for auto-aim and operator-side system integration.</p>
         </article>
         <article class="timeline-item">

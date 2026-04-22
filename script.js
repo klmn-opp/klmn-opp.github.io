@@ -53,6 +53,30 @@ const revealObserver = new IntersectionObserver(
 
 revealEls.forEach((el) => revealObserver.observe(el));
 
+const cursorGlow = document.getElementById("cursor-glow");
+if (cursorGlow && window.matchMedia("(pointer: fine)").matches) {
+  let glowX = window.innerWidth / 2;
+  let glowY = window.innerHeight / 2;
+
+  window.addEventListener("mousemove", (event) => {
+    glowX = event.clientX;
+    glowY = event.clientY;
+    cursorGlow.style.opacity = "1";
+  });
+
+  window.addEventListener("mouseleave", () => {
+    cursorGlow.style.opacity = "0";
+  });
+
+  function animateGlow() {
+    cursorGlow.style.left = `${glowX}px`;
+    cursorGlow.style.top = `${glowY}px`;
+    requestAnimationFrame(animateGlow);
+  }
+
+  animateGlow();
+}
+
 const canvas = document.getElementById("particle-canvas");
 const ctx = canvas?.getContext("2d");
 
