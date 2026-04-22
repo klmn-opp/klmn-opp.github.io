@@ -396,7 +396,7 @@ ul {
 .project-card,
 .research-card {
   max-height: 120px;
-  transition: max-height 0.45s ease, border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+  transition: max-height 0.675s ease, border-color 0.45s ease, background 0.45s ease, transform 0.45s ease;
 }
 
 .project-card > :not(h3):not(.card-summary),
@@ -405,7 +405,7 @@ ul {
   max-height: 0;
   overflow: hidden;
   transform: translateY(8px);
-  transition: opacity 0.26s ease, max-height 0.45s ease, transform 0.3s ease;
+  transition: opacity 0.39s ease, max-height 0.675s ease, transform 0.45s ease;
 }
 
 .card-summary {
@@ -416,7 +416,7 @@ ul {
   max-height: 4rem;
   overflow: hidden;
   transform: translateY(0);
-  transition: opacity 0.22s ease, max-height 0.22s ease, transform 0.22s ease;
+  transition: opacity 0.33s ease, max-height 0.33s ease, transform 0.33s ease;
 }
 
 .summary-key {
@@ -591,7 +591,7 @@ ul {
   background: rgba(15, 23, 42, 0.62);
   overflow: hidden;
   max-height: 52px;
-  transition: max-height 0.42s ease, border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+  transition: max-height 0.63s ease, border-color 0.45s ease, background 0.45s ease, transform 0.45s ease;
 }
 
 .photo-card:focus-visible {
@@ -607,7 +607,7 @@ ul {
   opacity: 0;
   max-height: 0;
   transform: translateY(8px);
-  transition: opacity 0.24s ease, max-height 0.42s ease, transform 0.3s ease;
+  transition: opacity 0.36s ease, max-height 0.63s ease, transform 0.45s ease;
 }
 
 .photo-card figcaption {
