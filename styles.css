@@ -6,6 +6,8 @@
   --line: #1e293b;
   --accent: #38bdf8;
   --accent-strong: #22d3ee;
+  --accent-violet: #c084fc;
+  --accent-violet-soft: #e9d5ff;
   --glass: rgba(15, 23, 42, 0.58);
   --radius: 18px;
 }
@@ -145,6 +147,36 @@ h1 {
   pointer-events: none;
 }
 
+h2,
+h3,
+.key,
+.strong-line {
+  display: inline-block;
+  background-image: linear-gradient(
+    45deg,
+    currentColor 0%,
+    currentColor 43%,
+    rgba(255, 255, 255, 0.96) 49%,
+    var(--accent-violet-soft) 53%,
+    currentColor 60%,
+    currentColor 100%
+  );
+  background-size: 230% 230%;
+  background-position: -135% -135%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: text-sweep 5.2s linear infinite;
+}
+
+@keyframes text-sweep {
+  0% {
+    background-position: -135% -135%;
+  }
+  100% {
+    background-position: 135% 135%;
+  }
+}
+
 @keyframes scan-sweep {
   0% {
     background-position: -140% -140%;
@@ -224,6 +256,11 @@ li {
 .strong-line {
   color: #d7f6ff;
   font-weight: 600;
+}
+
+.violet {
+  color: var(--accent-violet);
+  font-weight: 700;
 }
 
 ul {
