@@ -53,6 +53,59 @@ const revealObserver = new IntersectionObserver(
 
 revealEls.forEach((el) => revealObserver.observe(el));
 
+const photoGrid = document.querySelector(".photo-grid");
+const photoLightbox = document.getElementById("photo-lightbox");
+const photoLightboxImage = document.getElementById("photo-lightbox-image");
+const photoLightboxClose = document.getElementById("photo-lightbox-close");
+
+if (photoGrid && photoLightbox && photoLightboxImage && photoLightboxClose) {
+  const openLightbox = (sourceImage) => {
+    const src = sourceImage.getAttribute("src");
+    if (!src) return;
+
+    photoLightboxImage.setAttribute("src", src);
+    photoLightboxImage.setAttribute("alt", sourceImage.getAttribute("alt") || "Expanded photo");
+    photoLightbox.classList.add("open");
+    photoLightbox.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeLightbox = () => {
+    photoLightbox.classList.remove("open");
+    photoLightbox.setAttribute("aria-hidden", "true");
+    photoLightboxImage.setAttribute("src", "");
+    document.body.style.overflow = "";
+  };
+
+  photoGrid.querySelectorAll("img").forEach((img) => {
+    img.style.cursor = "zoom-in";
+    img.addEventListener("click", () => openLightbox(img));
+  });
+
+  photoGrid.querySelectorAll(".photo-card").forEach((card) => {
+    card.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      const image = card.querySelector("img");
+      if (!image) return;
+      event.preventDefault();
+      openLightbox(image);
+    });
+  });
+
+  photoLightboxClose.addEventListener("click", closeLightbox);
+  photoLightbox.addEventListener("click", (event) => {
+    if (event.target === photoLightbox) {
+      closeLightbox();
+    }
+  });
+
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && photoLightbox.classList.contains("open")) {
+      closeLightbox();
+    }
+  });
+}
+
 const cursorGlow = document.getElementById("cursor-glow");
 if (cursorGlow && window.matchMedia("(pointer: fine)").matches) {
   let glowX = window.innerWidth / 2;
