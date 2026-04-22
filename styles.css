@@ -72,8 +72,8 @@ body::before {
   position: fixed;
   top: -40%;
   left: -45%;
-  width: 70vw;
-  min-width: 360px;
+  width: 320vw;
+  min-width: 1600px;
   height: 220vh;
   pointer-events: none;
   z-index: 0;
@@ -81,13 +81,31 @@ body::before {
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0) 0%,
-    rgba(192, 132, 252, 0.06) 46%,
-    rgba(255, 255, 255, 0.16) 50%,
-    rgba(34, 211, 238, 0.08) 54%,
+    rgba(192, 132, 252, 0.04) 35%,
+    rgba(192, 132, 252, 0.08) 42%,
+    rgba(255, 255, 255, 0.18) 50%,
+    rgba(34, 211, 238, 0.1) 58%,
+    rgba(34, 211, 238, 0.05) 66%,
     rgba(255, 255, 255, 0) 100%
   );
-  filter: blur(2px);
+  filter: blur(2.5px);
   animation: page-sweep 12s linear infinite;
+}
+
+.global-sweep::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.05) 46%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.05) 54%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  backdrop-filter: blur(1.6px) saturate(140%) hue-rotate(8deg);
+  -webkit-backdrop-filter: blur(1.6px) saturate(140%) hue-rotate(8deg);
 }
 
 @keyframes page-sweep {
@@ -432,6 +450,11 @@ ul {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+#projects .grid-3,
+#research .grid-2 {
+  grid-template-columns: 1fr;
+}
+
 .card {
   border: 1px solid var(--line);
   border-radius: 14px;
@@ -531,6 +554,39 @@ ul {
   color: #f3e8ff;
   border: 1px solid rgba(192, 132, 252, 0.48);
   background: rgba(76, 29, 149, 0.28);
+}
+
+.project-card h3 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.title-main {
+  min-width: 0;
+}
+
+.title-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  justify-content: flex-end;
+}
+
+.mini-tag {
+  font-size: 0.66rem;
+  line-height: 1;
+  padding: 0.26rem 0.45rem;
+  border-radius: 999px;
+  color: #f3e8ff;
+  border: 1px solid rgba(192, 132, 252, 0.48);
+  background: rgba(76, 29, 149, 0.3);
+  white-space: nowrap;
+  background-image: none !important;
+  -webkit-text-fill-color: #f3e8ff;
+  animation: none !important;
 }
 
 .timeline {
