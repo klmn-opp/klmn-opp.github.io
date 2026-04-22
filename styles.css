@@ -118,6 +118,50 @@ h1 {
   line-height: 1.1;
 }
 
+.scan-glow {
+  position: relative;
+  display: inline-block;
+  color: #e9faff;
+  text-shadow: 0 0 12px rgba(56, 189, 248, 0.16);
+}
+
+.scan-glow::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  color: transparent;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.94) 49%,
+    rgba(103, 232, 249, 1) 52%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  background-size: 240% 240%;
+  background-position: -140% -140%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: scan-sweep 4.1s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes scan-sweep {
+  0% {
+    background-position: -140% -140%;
+    opacity: 0.15;
+  }
+  18% {
+    opacity: 1;
+  }
+  46% {
+    opacity: 0.2;
+  }
+  100% {
+    background-position: 140% 140%;
+    opacity: 0;
+  }
+}
+
 .subtitle {
   color: var(--muted);
 }
@@ -172,6 +216,16 @@ li {
   color: var(--muted);
 }
 
+.key {
+  color: var(--accent-strong);
+  font-weight: 700;
+}
+
+.strong-line {
+  color: #d7f6ff;
+  font-weight: 600;
+}
+
 ul {
   list-style: none;
   display: grid;
@@ -197,6 +251,11 @@ ul {
   border-radius: 14px;
   padding: 1rem;
   background: rgba(15, 23, 42, 0.55);
+}
+
+.card p + p,
+.timeline-item p + p {
+  margin-top: 0.4rem;
 }
 
 .meta {
