@@ -419,6 +419,11 @@ ul {
   transition: opacity 0.22s ease, max-height 0.22s ease, transform 0.22s ease;
 }
 
+.summary-key {
+  color: #7dd3fc;
+  font-weight: 700;
+}
+
 .project-card:hover,
 .project-card:focus-within,
 .research-card:hover,
@@ -573,6 +578,33 @@ ul {
   background: rgba(15, 23, 42, 0.7);
 }
 
+.photo-grid {
+  margin-top: 0.9rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.photo-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.62);
+  overflow: hidden;
+}
+
+.photo-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.photo-card figcaption {
+  padding: 0.5rem 0.65rem 0.6rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
 .site-footer {
   border-top: 1px solid var(--line);
   text-align: center;
@@ -615,6 +647,10 @@ ul {
 
   .grid-2,
   .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-grid {
     grid-template-columns: 1fr;
   }
 
