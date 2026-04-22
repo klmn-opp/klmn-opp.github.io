@@ -395,17 +395,28 @@ ul {
 
 .project-card,
 .research-card {
-  max-height: 78px;
+  max-height: 120px;
   transition: max-height 0.45s ease, border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
 }
 
-.project-card > :not(h3),
-.research-card > :not(h3) {
+.project-card > :not(h3):not(.card-summary),
+.research-card > :not(h3):not(.card-summary) {
   opacity: 0;
   max-height: 0;
   overflow: hidden;
   transform: translateY(8px);
   transition: opacity 0.26s ease, max-height 0.45s ease, transform 0.3s ease;
+}
+
+.card-summary {
+  margin-top: 0.48rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+  opacity: 1;
+  max-height: 4rem;
+  overflow: hidden;
+  transform: translateY(0);
+  transition: opacity 0.22s ease, max-height 0.22s ease, transform 0.22s ease;
 }
 
 .project-card:hover,
@@ -425,6 +436,15 @@ ul {
   opacity: 1;
   max-height: 500px;
   transform: translateY(0);
+}
+
+.project-card:hover .card-summary,
+.project-card:focus-within .card-summary,
+.research-card:hover .card-summary,
+.research-card:focus-within .card-summary {
+  opacity: 0;
+  max-height: 0;
+  transform: translateY(-4px);
 }
 
 .card::before {
@@ -608,6 +628,10 @@ ul {
     opacity: 1;
     max-height: none;
     transform: none;
+  }
+
+  .card-summary {
+    display: none;
   }
 
   .title-tags {
