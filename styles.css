@@ -68,6 +68,45 @@ body::before {
   animation: blob-float 14s ease-in-out infinite;
 }
 
+.global-sweep {
+  position: fixed;
+  top: -40%;
+  left: -45%;
+  width: 70vw;
+  min-width: 360px;
+  height: 220vh;
+  pointer-events: none;
+  z-index: 0;
+  transform: rotate(18deg);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(192, 132, 252, 0.06) 46%,
+    rgba(255, 255, 255, 0.16) 50%,
+    rgba(34, 211, 238, 0.08) 54%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  filter: blur(2px);
+  animation: page-sweep 12s linear infinite;
+}
+
+@keyframes page-sweep {
+  0% {
+    transform: translateX(-60vw) rotate(18deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(165vw) rotate(18deg);
+    opacity: 0;
+  }
+}
+
 .blob-a {
   top: 6%;
   left: -7%;
@@ -400,11 +439,17 @@ ul {
   background: rgba(15, 23, 42, 0.55);
   position: relative;
   overflow: hidden;
+  transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+}
+
+.project-card,
+.research-card {
   max-height: 78px;
   transition: max-height 0.45s ease, border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
 }
 
-.card > :not(h3) {
+.project-card > :not(h3),
+.research-card > :not(h3) {
   opacity: 0;
   max-height: 0;
   overflow: hidden;
@@ -412,16 +457,20 @@ ul {
   transition: opacity 0.26s ease, max-height 0.45s ease, transform 0.3s ease;
 }
 
-.card:hover,
-.card:focus-within {
+.project-card:hover,
+.project-card:focus-within,
+.research-card:hover,
+.research-card:focus-within {
   max-height: 620px;
   border-color: rgba(192, 132, 252, 0.45);
   background: rgba(15, 23, 42, 0.74);
   transform: translateY(-2px);
 }
 
-.card:hover > :not(h3),
-.card:focus-within > :not(h3) {
+.project-card:hover > :not(h3),
+.project-card:focus-within > :not(h3),
+.research-card:hover > :not(h3),
+.research-card:focus-within > :not(h3) {
   opacity: 1;
   max-height: 500px;
   transform: translateY(0);
@@ -438,6 +487,7 @@ ul {
   transform: skewX(-20deg);
   transition: left 0.8s ease;
   pointer-events: none;
+  display: none;
 }
 
 .card:hover::before {
@@ -559,11 +609,13 @@ ul {
     grid-template-columns: 1fr;
   }
 
-  .card {
+  .project-card,
+  .research-card {
     max-height: none;
   }
 
-  .card > :not(h3) {
+  .project-card > :not(h3),
+  .research-card > :not(h3) {
     opacity: 1;
     max-height: none;
     transform: none;
