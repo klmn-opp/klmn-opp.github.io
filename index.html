@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalman Lin | Personal Homepage</title>
+  <meta name="description" content="Kalman Lin 的个人主页：基础信息、教育经历、项目介绍、科研经历、竞赛经历与个人兴趣。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <div class="brand">KLMN</div>
+    <button id="menu-toggle" class="menu-toggle" aria-label="切换导航菜单" aria-expanded="false">☰</button>
+    <nav id="site-nav" class="site-nav" aria-label="主导航">
+      <a href="#about">基础信息</a>
+      <a href="#education">教育经历</a>
+      <a href="#projects">项目介绍</a>
+      <a href="#research">科研经历</a>
+      <a href="#competitions">竞赛经历</a>
+      <a href="#interests">个人兴趣</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="hero section fade-in">
+      <p class="badge">Personal Tech Portfolio</p>
+      <h1>Kalman Lin</h1>
+      <p class="subtitle">Build · Research · Compete · Explore</p>
+      <div class="hero-actions">
+        <a href="#about" class="btn btn-primary">查看信息</a>
+        <a href="#projects" class="btn btn-outline">浏览项目</a>
+      </div>
+    </section>
+
+    <section id="about" class="section glass fade-in">
+      <h2>基础信息</h2>
+      <div class="grid-2">
+        <article class="card">
+          <h3>个人简介</h3>
+          <p>这里用于介绍你的研究方向、技术栈和长期目标。可替换为 3~5 句话的核心自我描述。</p>
+        </article>
+        <article class="card">
+          <h3>联系方式</h3>
+          <ul>
+            <li>邮箱：your.email@example.com</li>
+            <li>GitHub：github.com/your-id</li>
+            <li>城市：Your City</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="education" class="section glass fade-in">
+      <h2>教育经历</h2>
+      <div class="timeline">
+        <article class="timeline-item">
+          <span class="time">20XX - 20XX</span>
+          <h3>学校 / 学位</h3>
+          <p>专业、绩点、主修课程、奖学金等信息。</p>
+        </article>
+        <article class="timeline-item">
+          <span class="time">20XX - 至今</span>
+          <h3>学校 / 学位</h3>
+          <p>研究兴趣、实验室经历、代表性成绩。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" class="section glass fade-in">
+      <h2>项目介绍</h2>
+      <div class="grid-3">
+        <article class="card project-card">
+          <h3>项目 A</h3>
+          <p>简要描述项目背景、技术方案和你的贡献。</p>
+          <p class="meta">Tech: Python / C++ / Web</p>
+        </article>
+        <article class="card project-card">
+          <h3>项目 B</h3>
+          <p>突出结果指标，如性能提升、用户规模、落地效果。</p>
+          <p class="meta">Tech: ML / Data / Cloud</p>
+        </article>
+        <article class="card project-card">
+          <h3>项目 C</h3>
+          <p>可放课程项目、实习项目或开源贡献。</p>
+          <p class="meta">Tech: React / Node / SQL</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="research" class="section glass fade-in">
+      <h2>科研经历</h2>
+      <div class="grid-2">
+        <article class="card">
+          <h3>研究方向</h3>
+          <p>描述你关注的问题、方法和进展，例如多模态学习、优化算法、系统架构等。</p>
+        </article>
+        <article class="card">
+          <h3>论文与成果</h3>
+          <ul>
+            <li>Paper/Preprint Title, Venue, Year</li>
+            <li>Patent / Technical Report</li>
+            <li>Open-source Repo / Demo</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="competitions" class="section glass fade-in">
+      <h2>竞赛经历</h2>
+      <div class="timeline">
+        <article class="timeline-item">
+          <span class="time">20XX</span>
+          <h3>竞赛名称</h3>
+          <p>获奖等级、题目方向、个人职责与关键技术。</p>
+        </article>
+        <article class="timeline-item">
+          <span class="time">20XX</span>
+          <h3>竞赛名称</h3>
+          <p>团队规模、最终排名、优化亮点。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="interests" class="section glass fade-in">
+      <h2>个人兴趣</h2>
+      <div class="tags">
+        <span>📷 摄影</span>
+        <span>🏃 跑步</span>
+        <span>🎹 音乐</span>
+        <span>📚 阅读</span>
+        <span>🛰️ 科技新闻</span>
+        <span>🧠 技术写作</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Kalman Lin · Powered by GitHub Pages</p>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
