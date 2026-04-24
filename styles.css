@@ -287,6 +287,22 @@ strong {
   color: var(--muted);
 }
 
+.subtitle-glow {
+  color: #cbd5e1;
+  animation: subtitle-pulse 4s ease-in-out infinite;
+}
+
+@keyframes subtitle-pulse {
+  0%, 100% {
+    color: #cbd5e1;
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+  }
+  50% {
+    color: #e0f2fe;
+    text-shadow: 0 0 25px rgba(56, 189, 248, 0.8), 0 0 40px rgba(34, 211, 238, 0.6);
+  }
+}
+
 .hero-intro {
   max-width: 760px;
   color: #cbd5e1;
