@@ -688,6 +688,71 @@ ul {
   outline-offset: 2px;
 }
 
+.connect-section {
+  position: relative;
+  margin-top: 2.4rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.connect-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(56, 189, 248, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.06) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+.connect-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.connect-icon {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto 0.8rem;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  background: rgba(56, 189, 248, 0.12);
+  font-size: 1.2rem;
+}
+
+.connect-title {
+  font-size: clamp(1.9rem, 4.5vw, 3.05rem);
+  margin-bottom: 0.7rem;
+  color: #dbeafe;
+}
+
+.connect-title span {
+  background: linear-gradient(120deg, #60a5fa, var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.connect-text {
+  max-width: 860px;
+  margin: 0 auto;
+  font-size: clamp(1rem, 2.2vw, 1.18rem);
+  line-height: 1.75;
+  color: #cbd5e1;
+}
+
+.connect-actions {
+  margin-top: 1.4rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
 .site-footer {
   border-top: 1px solid var(--line);
   text-align: center;
@@ -735,6 +800,15 @@ ul {
 
   .photo-grid {
     grid-template-columns: 1fr;
+  }
+
+  .connect-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .connect-actions .btn {
+    text-align: center;
   }
 
   .photo-card {
