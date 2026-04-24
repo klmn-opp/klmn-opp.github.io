@@ -203,7 +203,8 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
   gap: 0.85rem;
 }
 
@@ -286,9 +287,15 @@ strong {
   color: var(--muted);
 }
 
+.hero-intro {
+  max-width: 760px;
+  color: #cbd5e1;
+}
+
 .hero-actions {
   margin-top: 0.4rem;
   display: flex;
+  justify-content: center;
   gap: 0.8rem;
 }
 
